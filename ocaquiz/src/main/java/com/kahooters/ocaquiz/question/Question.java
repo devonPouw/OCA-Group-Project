@@ -2,27 +2,20 @@ package com.kahooters.ocaquiz.question;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Question {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
 //    public Integer type;
     public String text;
 //    public Integer points;
 
-    public Question(String text) {
+    public Question(String text, Long id) {
         this.text = text;
+        this.id = id;
     }
 
 //    @ManyToMany(mappedBy = "questions")

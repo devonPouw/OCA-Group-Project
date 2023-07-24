@@ -1,17 +1,30 @@
 package com.kahooters.ocaquiz.question;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping("api/v1/questions")
+@RequestMapping("api/v1/questions/")
 public class QuestionController {
 
-    @GetMapping
-    public Question newQuestion(){
-        return new Question("Do you like blueberries?");
+    @Autowired
+    QuestionRepository questionRepository;
+
+    @GetMapping()
+    public List<Question> getQuestions(){
+        return questionRepository.findAll();
+    }
+
+    @GetMapping("{id}")
+    public Optional<Question> getQuestionById(@PathVariable("id")long id){
+        return questionRepository.findById(id);
+    }
+    @PostMapping
+    public Question postQuestion(@RequestBody Question question) {
+        return questionRepository.save(question);
     }
 }
