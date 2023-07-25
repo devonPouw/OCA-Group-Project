@@ -1,40 +1,38 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Header from '../components/header';
 
 export default function Question() {
-  const [questions, setQuestion] = useState("");
+  const [questions, setQuestion] = useState([]);
   const [isClicked, setClicked] = useState(false);
-
-  handleSubmit((createQuestion) => {
-    //alert('A list was submitted: ' + this.state.formvalue);
-    createQuestion.preventDefault();
-    fetch('http://localhost:8080/api/v1/questions/', {
-      method: 'POST',
-      headers: {
-        
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        id: this.state.id,
-        text: this.state.text,
-      })
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
-  })
 
   useEffect(() => {
     fetch("http://localhost:8080/api/v1/questions")
       .then((response) => response.json())
-      .then((actualData) => setQuestion(actualData.text))
+      .then((actualData) => setQuestion(actualData))
       .catch((err) => console.log(`An error has occurred: ${err.message}.`));
   }, []);
 
+  console.log(questions)
 
   return (
     <div className="w-full h-full">
-      {isClicked ? <p> new question: {questions}</p> : <p><button onClick={() => setClicked(true)}>Click me</button></p>}
-    
+        <Link to="/"><Header /></Link>
+      {isClicked ? (
+       <ul>
+       {questions.map((question) => (
+         <li key={question.id}>{question.text}</li>
+       ))}
+     </ul>
+      ) : (
+        <p>
+          <button onClick={() => setClicked(true)}>Click me</button>
+        </p>
+      )}
+      
+      <Link to="/questionscreated" className="btn btn-danger rounded-full bg-red-400">
+        Create Question
+      </Link>
     </div>
   );
 }
