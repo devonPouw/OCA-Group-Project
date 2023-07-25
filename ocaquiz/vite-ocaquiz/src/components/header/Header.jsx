@@ -8,7 +8,7 @@ export default function Header() {
     })
 
     async function onLogin(){
-      const data = JSON.stringify({name: document.getElementById("username").value, password: document.getElementById("password").value})
+      const data = JSON.stringify({username: document.getElementById("username").value, password: document.getElementById("password").value})
       const body = {
           method: "POST",
           headers: {
@@ -33,7 +33,7 @@ export default function Header() {
           }
   
       });
-      
+      console.log(body)
   
   }
 

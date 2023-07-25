@@ -24,5 +24,4 @@ public class KahooterUserController {
 //    public KahooterUser newUser(@RequestBody KahooterUser kahooterUser){
 //        return kahooterUserService.kahooterUserRepository.save(kahooterUser);
 //    }
-
 }
