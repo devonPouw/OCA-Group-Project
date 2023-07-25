@@ -5,7 +5,7 @@ import Header from '../components/header';
 export default function Home() {
 
 
-return (
+  return (
     <>
     <Link to="/"><Header /></Link>
       <div>
