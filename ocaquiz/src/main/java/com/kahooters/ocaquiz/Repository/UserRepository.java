@@ -1,8 +1,10 @@
 package com.kahooters.ocaquiz.Repository;
 
-import com.kahooters.ocaquiz.Model.User;
+import com.kahooters.ocaquiz.Model.KahooterUser;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends CrudRepository<User, Long> {
+import java.util.Optional;
 
+public interface UserRepository extends CrudRepository<KahooterUser, Long> {
+    Optional<KahooterUser> findByName(String name);
 }

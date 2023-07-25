@@ -14,12 +14,17 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class KahooterUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long ID;
+    public Long id;
 
-    public String name;
-    public String password;
+    private String name;
+    private String password;
+    private String nickname;
+
+
 }
+
+

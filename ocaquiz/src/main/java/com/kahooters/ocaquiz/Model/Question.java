@@ -23,22 +23,22 @@ public class Question {
     public Integer text;
     public Integer points;
 
-    @ManyToMany(mappedBy = "questions")
-    @JsonIgnore
-    public List<Quiz> Quizes;
-
-    @OneToMany(mappedBy = "question")
-    @JsonManagedReference
-    public List<Choice> choices;
-
-    @OneToMany(mappedBy = "question")
-    @JsonManagedReference
-    public List<ChosenAnswer> chosenAnswers;
-
-    @JoinTable(
-            name = "questions_tags",
-            joinColumns = @JoinColumn(name = "tag_id"),
-            inverseJoinColumns = @JoinColumn(name = "question_id")
-    )
-    public List<Tag> tags;
+//    @ManyToMany(mappedBy = "questions")
+//    @JsonIgnore
+//    public List<Quiz> Quizes;
+//
+//    @OneToMany(mappedBy = "question")
+//    @JsonManagedReference
+//    public List<Choice> choices;
+//
+//    @OneToMany(mappedBy = "question")
+//    @JsonManagedReference
+//    public List<ChosenAnswer> chosenAnswers;
+//
+//    @JoinTable(
+//            name = "questions_tags",
+//            joinColumns = @JoinColumn(name = "tag_id"),
+//            inverseJoinColumns = @JoinColumn(name = "question_id")
+//    )
+//    public List<Tag> tags;
 }

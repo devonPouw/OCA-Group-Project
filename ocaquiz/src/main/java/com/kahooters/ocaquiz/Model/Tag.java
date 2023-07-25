@@ -21,8 +21,8 @@ public class Tag {
     public Long ID;
     public String name;
 
-    @ManyToMany(mappedBy = "tags")
-    @JsonIgnore
-    public List<Question> questions;
+//    @ManyToMany(mappedBy = "tags")
+//    @JsonIgnore
+//    public List<Question> questions;
 
 }

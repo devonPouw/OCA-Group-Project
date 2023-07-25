@@ -21,9 +21,9 @@ public class Choice {
     public String description;
     public Integer isCorrect;
 
-    @ManyToOne
-    @JsonBackReference
-    public Question question;
+//    @ManyToOne
+//    @JsonBackReference
+//    public Question question;
 
 
 }

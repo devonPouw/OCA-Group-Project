@@ -22,15 +22,15 @@ public class Quiz {
     public Long ID;
     public String name;
 
-    @JoinTable(
-            name = "quizes_questions",
-            joinColumns = @JoinColumn(name = "question_id"),
-            inverseJoinColumns = @JoinColumn(name = "quiz_id")
-    )
-    public List<Question> questions;
-
-    @OneToMany(mappedBy = "quiz")
-    @JsonManagedReference
-    public List<ChosenAnswer> chosenAnswers;
+//    @JoinTable(
+//            name = "quizes_questions",
+//            joinColumns = @JoinColumn(name = "question_id"),
+//            inverseJoinColumns = @JoinColumn(name = "quiz_id")
+//    )
+//    public List<Question> questions;
+//
+//    @OneToMany(mappedBy = "quiz")
+//    @JsonManagedReference
+//    public List<ChosenAnswer> chosenAnswers;
 
 }

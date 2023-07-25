@@ -19,17 +19,17 @@ public class ChosenAnswer {
     public Long ID;
     public Integer input;
 
-    @ManyToOne
-    @JsonBackReference
-    public Quiz quiz;
-
-    @ManyToOne
-    @JsonBackReference
-    public Question question;
-
-    @ManyToOne
-    @JsonBackReference
-    public User user;
+//    @ManyToOne
+//    @JsonBackReference
+//    public Quiz quiz;
+//
+//    @ManyToOne
+//    @JsonBackReference
+//    public Question question;
+//
+//    @ManyToOne
+//    @JsonBackReference
+//    public User user;
 
 
 
