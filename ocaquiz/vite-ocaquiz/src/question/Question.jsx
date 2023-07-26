@@ -16,7 +16,7 @@ export default function Question() {
   console.log(questions)
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full flex flex-col">
         <Header />
       {isClicked ? (
        <ul>
@@ -25,14 +25,10 @@ export default function Question() {
        ))}
      </ul>
       ) : (
-        <p>
+        <div className="flex items-center">
           <button onClick={() => setClicked(true)}>Click me</button>
-        </p>
+        </div>
       )}
-      
-      <Link to="/questionscreated" className="btn btn-danger rounded-full bg-red-400">
-        Create Question
-      </Link>
     </div>
   );
 }

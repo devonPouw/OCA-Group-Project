@@ -31,7 +31,9 @@ const handleInput = (e) => {
     return (
     <div className="w-full h-full">
         <Header />
+        <div className="text-4xl p-4 flex">
         <Link to="/"><BsFillArrowLeftSquareFill/></Link>
+        </div>
         <div className="flex flex-row justify-center">
         </div>
         <form onSubmit={saveQuestion}>
