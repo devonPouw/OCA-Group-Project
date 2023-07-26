@@ -1,5 +1,7 @@
 package com.kahooters.ocaquiz.question;
 
+import com.kahooters.ocaquiz.choice.Choice;
+import com.kahooters.ocaquiz.choice.ChoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,8 @@ public class QuestionController {
 
     @Autowired
     QuestionRepository questionRepository;
+    @Autowired
+    ChoiceRepository choiceRepository;
 
     @GetMapping("/questions")
     public List<Question> getQuestions(){
@@ -25,7 +29,12 @@ public class QuestionController {
     }
     @PostMapping("/questions")
     public Question postQuestion(@RequestBody Question question) {
+        List<Choice> choiceList = question.getChoices();
         return questionRepository.save(question);
+    }
+    public void setChoices(Choice choice){
+//        choiceRepository.save(choice);
+        System.out.println(choice.getQuestion().getQuestionText());
     }
 //    @PutMapping("/questions/{id}")
 //    public ResponseEntity<Question> updateQuestion(@PathVariable("id") long id, @RequestBody Question question) {

@@ -1,11 +1,26 @@
 package com.kahooters.ocaquiz.choice;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.awt.*;
+import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/v1/choice")
+@RequestMapping("/api/v1/question")
 public class ChoiceController {
+
+    @Autowired
+    ChoiceRepository choiceRepository;
+
+    @PostMapping("/choice")
+    public Choice postChoice(@RequestBody Choice choice) {
+        return choiceRepository.save(choice);
+    }
+
+    @GetMapping("/choice")
+    public List<Choice> getChoice(){
+        return choiceRepository.findAll();
+    }
 }

@@ -1,8 +1,7 @@
 package com.kahooters.ocaquiz.choice;
 
-import com.kahooters.ocaquiz.choice.Choice;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ChoiceRepository extends CrudRepository<Choice, Long> {
+public interface ChoiceRepository extends JpaRepository<Choice, Long> {
 
 }

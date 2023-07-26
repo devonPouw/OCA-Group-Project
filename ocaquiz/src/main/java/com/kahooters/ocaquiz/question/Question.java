@@ -1,11 +1,14 @@
 package com.kahooters.ocaquiz.question;
 
 
+import com.kahooters.ocaquiz.choice.Choice;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 
 @Entity
@@ -20,22 +23,15 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String text;
+    private String questionText;
 //    public Integer points;
-
-//    private Question(){}
-//    public Question(String text, Long id) {
-//        this.text = text;
-//        this.id = id;
-//    }
 
 //    @ManyToMany(mappedBy = "questions")
 //    @JsonIgnore
 //    public List<Quiz> Quizzes;
 //
-//    @OneToMany(mappedBy = "question")
-//    @JsonManagedReference
-//    public List<Choice> choices;
+    @OneToMany(mappedBy = "question")
+    public List<Choice> choices;
 //
 //    @OneToMany(mappedBy = "question")
 //    @JsonManagedReference

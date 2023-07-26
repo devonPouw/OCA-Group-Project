@@ -1,6 +1,5 @@
 package com.kahooters.ocaquiz.choice;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.kahooters.ocaquiz.question.Question;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,10 +20,11 @@ public class Choice {
 
     private String description;
 
-    private boolean isCorrect;
+    private Boolean isCorrect;
+
+    private String feedback;
 
     @ManyToOne
-    @JsonBackReference
     private Question question;
 
 
