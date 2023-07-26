@@ -12,7 +12,7 @@ export default function Router() {
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/questions' element={<Question />} />
-          <Route path='/questionscreated' element={<CreateQuestion />} />
+          <Route path='/createquestions' element={<CreateQuestion />} />
           <Route path='*' element={<h1>Not found</h1>} />
       </Routes>
       </BrowserRouter>

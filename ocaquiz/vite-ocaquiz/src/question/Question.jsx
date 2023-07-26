@@ -17,7 +17,7 @@ export default function Question() {
 
   return (
     <div className="w-full h-full">
-        <Link to="/"><Header /></Link>
+        <Header />
       {isClicked ? (
        <ul>
        {questions.map((question) => (

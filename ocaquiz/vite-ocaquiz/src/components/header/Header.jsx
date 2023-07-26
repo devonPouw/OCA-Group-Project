@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
 
@@ -40,8 +41,8 @@ export default function Header() {
   return (
     <div>
     <div className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] sticky top-0 z-50 w-full flex justify-center items-center h-24 bg-white text-gray-800 font-bold text-4xl shadow-md border border-gray-200 rounded-b-xl">
-      Ka
-      <span className="text-orange-500 font-sans italic py-8">Hooters</span>
+    <Link to="/"><div>Ka
+      <span className="text-orange-500 font-sans italic py-8">Hooters</span></div></Link>
       {user.id === -1 && <div className=" text-lg">
                 <input type="text" name="username" size="10" id="username" className="border-2 border-neutral-500 m-5"/>
                 <input type="password" name="password" size="10" id="password" className="border-2 border-neutral-500 m-5"/>
