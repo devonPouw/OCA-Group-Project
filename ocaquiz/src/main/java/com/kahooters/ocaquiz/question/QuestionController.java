@@ -29,8 +29,12 @@ public class QuestionController {
     }
     @PostMapping("/questions")
     public Question postQuestion(@RequestBody Question question) {
-        List<Choice> choiceList = question.getChoices();
-        return questionRepository.save(question);
+        questionRepository.save(question);
+        for (Choice choice:question.getChoices()) {
+            choice.setQuestion(question);
+            choiceRepository.save(choice);
+        }
+        return question;
     }
     public void setChoices(Choice choice){
 //        choiceRepository.save(choice);
